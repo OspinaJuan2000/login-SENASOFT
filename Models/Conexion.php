@@ -3,7 +3,6 @@
 class Conexion {
     
     public static function connection() {
-
         try {
 
             $con = new PDO("mysql:host=localhost;dbname=login_senasoft;charset=utf8", 'root', '');

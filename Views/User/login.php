@@ -1,7 +1,7 @@
 <?php
-    require_once('./Controllers/SessionStarter.php');
+    require_once('../../Controllers/SessionStarter.php');
     $sessionStart = new SessionStarter();
-    $sessionStart->accessIndex();
+    $sessionStart->userSession();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Document</title>
 </head>
 
@@ -43,12 +43,13 @@
             </div>
 
             <div class="form__register">
-                <a class="btn btn--grey btn--large btn--round-3" href="http://localhost/login-SENASOFT/views/User/register.php">Create an account</a>
+                <a class="btn btn--grey btn--large btn--round-3 btn--hover" href="../../Views/User/register.php">Create an account</a>
             </div>
         </form>
     </div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./JS/Login/login.js" type="module"></script>
+    <script src="../../JS/Login/login.js" type="module"></script>
+
 </body>
 
 </html>

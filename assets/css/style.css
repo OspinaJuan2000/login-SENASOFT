@@ -29,21 +29,6 @@ a {
   border: 0.2rem solid #e72f2f !important;
 }
 
-.login {
-  text-align: center;
-  font-family: sans-serif;
-  background-color: #696666;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.login__close {
-  font-size: 2rem;
-  color: #fff;
-}
-
 .container {
   margin-top: 5vh;
   display: flex;
@@ -155,7 +140,6 @@ a {
 }
 .btn:active, .btn:focus {
   outline: none;
-  transform: translateX(-0.8rem);
 }
 .btn--green {
   background-color: #5cb0e0;
@@ -176,6 +160,9 @@ a {
   display: block;
   width: 100%;
 }
+.btn--hover:hover {
+  transform: translateY(0.2rem);
+}
 .btn--animated:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 0.1rem 1.5rem rgba(0, 0, 0, 0.2);
@@ -183,6 +170,27 @@ a {
 .btn--animated:hover::after {
   opacity: 0;
   transform: scaleX(1.3) scaleY(1.6);
+}
+
+.login {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #696666;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__close {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.github__icon {
+  width: 20%;
+  height: 20%;
+  color: #0092ca;
 }
 
 /*# sourceMappingURL=style.css.map */

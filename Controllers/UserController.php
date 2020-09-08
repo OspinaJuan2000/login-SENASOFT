@@ -1,6 +1,7 @@
 <?php
     require_once('../Models/UserModel.php');
     require_once('../Controllers/SessionStarter.php');
+
     class UserController extends UserModel{
 
         // Método para obtener los datos que llegan por POST en el formulario de registro y posteriormente insertarlos a la base de datos.
@@ -10,9 +11,10 @@
             $userModel->lastname = $lastname;
             $userModel->email = $email;
             $userModel->password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 10]);
-
+            $response = [];
+            
             // Si encuentra un email ya asociado en la base de datos decirle al usuario que ya existe.
-            if ($userModel->validateEmail() == 1) {
+            if ($userModel->validateEmail()) {
                 $response = [
                     'msj' => 'exist'
                 ];
@@ -20,10 +22,8 @@
                 // Convertir array a JSON.
                 echo json_encode($response);
 
-            } else if ($userModel->insertUser() == 1) {
-                $response = [
-                    'msj' => 'created'
-                ];
+            } else if ($userModel->insertUser()) {
+                $response = ['msj' => 'created'];
 
                 // Convertir array a JSON.
                 echo json_encode($response);
@@ -35,30 +35,25 @@
             $userModel = new UserModel();
             $userModel->email = $email;
             $userModel->password = $password;
+            $response = [];
 
             // Si encuentra un email en la base de datos, proseguir con las validaciones.
             if ($userModel->validateEmail() == 1) {
                 $verify = $userModel->verifyPassword($email, $password);
 
-                if ($verify == 1) {
-                    $response = [
-                        'msj' => 'password_correct'
-                    ];
+                if ($verify) {
+                    $response = ['msj' => 'password_correct'];
 
                     //Manejo de las sesiones.
                     $sessionStart = new SessionStarter();
                     $sessionStart->createSession($email);
 
                 } else {
-                    $response = [
-                        'msj' => 'password_incorrect'
-                    ]; 
+                    $response = ['msj' => 'password_incorrect']; 
                 }
 
             } else {
-                $response = [
-                    'msj' => 'not_exist'
-                ]; 
+                $response = ['msj' => 'not_exist']; 
             }
 
             // Convertir array a JSON.

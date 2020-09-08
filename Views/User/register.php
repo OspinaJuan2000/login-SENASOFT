@@ -1,7 +1,7 @@
 <?php
     require_once('../../Controllers/SessionStarter.php');
     $sessionStart = new SessionStarter();
-    $sessionStart->accessIndex();
+    $sessionStart->userSession();
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="form__login">
-                <a class="btn btn--grey btn--large btn--round-3" href="../../index.php">I have an account</a>
+                <a class="btn btn--grey btn--large btn--round-3 btn--hover" href="../../Views/User/login.php">I have an account</a>
             </div>
         </form>
     </div>

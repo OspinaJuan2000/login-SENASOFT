@@ -12,18 +12,21 @@
             );
         }
 
+        // Método para redirigir al index en caso de que no haya ninguna sesion.
         public function redirect () {
             if ($_SESSION == null) {
                 header('Location: ../../index.php');
             }
         }
 
-        public function accessIndex () {
+        // Método para comprobar si existe una sesion con los datos del usuario.
+        public function userSession () {
             if (isset($_SESSION['user'])) {
-                header('Location: http://localhost/login-SENASOFT/views/User/sesion.php');
+                header('Location: ../User/sesion.php');
             }
         }
 
+        // Método para cerrar la sesión.
         public function closeSession () {
             session_unset();
             session_destroy();

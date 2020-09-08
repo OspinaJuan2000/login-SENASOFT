@@ -3,13 +3,13 @@
 
     class UserModel {
         
-
         // Establecemos las propiedades para el modelo de Usuario.
         protected $name;
         protected $lastname;
         protected $email;
         protected $password;
         
+        // Método para comprobar si en la base de datos existe ya un email asociado a el que nos llega del formulario.
         protected function validateEmail () {
             $statement = Conexion::connection()->prepare("SELECT email FROM usuarios WHERE email = :email");
             $statement->bindParam(':email', $this->email);
@@ -39,6 +39,7 @@
             }
         }
 
+        // Método para verificar que la contraseña encriptada en la base de datos coincida con la que ingresa el usuario en el formulario de login.
         protected function verifyPassword ($email, $password) {
             $statement = Conexion::connection()->prepare("SELECT password FROM usuarios WHERE email = :email");
 
@@ -50,7 +51,7 @@
             if (password_verify($password, $passwordHash['password'])) {
                 return 1;
             } else {
-                return 2;
+                return 0;
             }
         }
     }

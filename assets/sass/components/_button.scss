@@ -17,7 +17,6 @@
     &:active,
     &:focus {
         outline: none;
-        transform: translateX(-0.8rem);
     }
 
     &--green {
@@ -42,6 +41,12 @@
     &--large {
         display: block;
         width: 100%;
+    }
+
+    &--hover {
+        &:hover {
+            transform: translateY(.2rem);
+        }
     }
 
     &--animated {

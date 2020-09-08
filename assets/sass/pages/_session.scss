@@ -1,0 +1,24 @@
+.login {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(105, 102, 102);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__close {
+        font-size: 2rem;
+        color: $color-white;
+    }
+}
+
+.github {
+
+    &__icon {
+        width: 20%;
+        height: 20%;
+        color: $color-blue;
+    }
+}

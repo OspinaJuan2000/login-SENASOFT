@@ -3,7 +3,7 @@ import {renderAlert} from './functions.js';
 const sendDataUser = async (userData) => {
     
     // Hacemos una petición al servidor PHP utilizando async await.
-    const response = await fetch('Controllers/UserController.php', {
+    const response = await fetch('../../Controllers/UserController.php', {
         method: 'POST',
         body: userData
     });
