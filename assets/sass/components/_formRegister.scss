@@ -1,0 +1,92 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 31%;
+    border: 0.1rem solid #dbdbdb;
+    padding: 3.5rem;
+    border-radius: 0.3rem;
+    border-right: 2rem solid $color-primary-dark;
+    transition: border-right 0.8s;
+
+    @include respond(respond-1400) {
+        width: 41%;
+    }
+
+    @include respond(tab-land) {
+        width: 48%;
+    }
+
+    @include respond(tab-port) {
+        width: 65vw;
+    }
+
+    @include respond(phone) {
+        width: 98%;
+    }
+
+    @include respond(respond-400) {
+        padding: 1rem;
+    }
+
+    &:hover {
+        border-right: 2rem solid $color-primary-dark-one;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &__group {
+        margin-bottom: 1.2rem;
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: $color-grey;
+    }
+
+    &__group--submit {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        padding: 1rem 4rem;
+        border-radius: 0.2rem;
+        border: 0.1rem solid #c6c7c7;
+        font-family: inherit;
+        color: inherit;
+        display: block;
+        width: 100%;
+
+        &:focus {
+            outline-color: $color-primary;
+        }
+    }
+
+    &__login {
+        text-align: center;
+        margin-top: 5rem;
+
+        &-msj {
+            position: relative;
+            top: 2rem;
+        }
+    }
+
+    &__register {
+        margin-top: 5rem;
+    }
+}
