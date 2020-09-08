@@ -23,6 +23,7 @@ const validateForm = () => {
         if(Object.values(errores).length > 0) {
             renderErrors(errores);
         } else {
+            removeErrors();
             sendDataUser(userData);
         }
     });
@@ -55,8 +56,6 @@ const renderAlert = (data) => {
 
 const renderErrors = (errors) => {
 
-    console.log(errors);
-    
     const nameInput = formRegister['name'];
     const lastNameInput = formRegister['lastname'];
     const emailInput = formRegister['email'];
@@ -75,6 +74,22 @@ const renderErrors = (errors) => {
         formRegister.querySelector('.form__error-password').style.display = 'none';
     }
 };
+
+const removeErrors = () => {
+    const nameInput = formRegister['name'];
+    const lastNameInput = formRegister['lastname'];
+    const emailInput = formRegister['email'];
+    const passwordInput = formRegister['password'];
+    const confirmPasswordInput = formRegister['passwordConfirm'];
+
+    nameInput.classList.remove('errorInput');
+    lastNameInput.classList.remove('errorInput');
+    emailInput.classList.remove('errorInput');
+    passwordInput.classList.remove('errorInput');
+    confirmPasswordInput.classList.remove('errorInput');
+
+    formRegister.querySelector('.form__error-password').style.display = 'none';
+}
 
 // Exportaciones al archivo principal register.js
 export {

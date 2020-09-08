@@ -1,3 +1,9 @@
+<?php
+    require_once('./Controllers/SessionStarter.php');
+    $sessionStart = new SessionStarter();
+    $sessionStart->accessIndex();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

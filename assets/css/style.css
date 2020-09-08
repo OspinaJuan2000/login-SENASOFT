@@ -29,6 +29,21 @@ a {
   border: 0.2rem solid #e72f2f !important;
 }
 
+.login {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #696666;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__close {
+  font-size: 2rem;
+  color: #fff;
+}
+
 .container {
   margin-top: 5vh;
   display: flex;

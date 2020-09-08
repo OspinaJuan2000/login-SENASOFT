@@ -1,3 +1,9 @@
+<?php
+    require_once('../../Controllers/SessionStarter.php');
+    $sessionStart = new SessionStarter();
+    $sessionStart->accessIndex();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +18,7 @@
 
 <body>
     <div class="container">
-        <form class="form" id="formRegister" method="POST" autocomplete=off>
+        <form class="form" id="formRegister" method="POST">
             <h1 class="form__title">Create an account</h1>
             <div class="form__group">
                 <div class="form__icon-group">

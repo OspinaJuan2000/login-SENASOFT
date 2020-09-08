@@ -43,6 +43,7 @@ const renderAlert = (data) => {
         });
 
     } else if (msj === 'password_correct') {
+        formLogin.reset();
         window.location.href = 'http://localhost/login-SENASOFT/views/User/sesion.php';
     }
 }

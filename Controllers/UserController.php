@@ -1,6 +1,6 @@
 <?php
     require_once('../Models/UserModel.php');
-
+    require_once('../Controllers/SessionStarter.php');
     class UserController extends UserModel{
 
         // Método para obtener los datos que llegan por POST en el formulario de registro y posteriormente insertarlos a la base de datos.
@@ -44,6 +44,10 @@
                     $response = [
                         'msj' => 'password_correct'
                     ];
+
+                    //Manejo de las sesiones.
+                    $sessionStart = new SessionStarter();
+                    $sessionStart->createSession($email);
 
                 } else {
                     $response = [

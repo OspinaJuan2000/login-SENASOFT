@@ -5,3 +5,19 @@
 .errorInput {
     border: .2rem solid rgb(231, 47, 47) !important;
 }
+
+.login {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(105, 102, 102);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__close {
+        font-size: 2rem;
+        color: $color-white;
+    }
+}
