@@ -1,5 +1,5 @@
 .container {
-    height: 100vh;
+    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,7 @@
     border: 0.1rem solid #dbdbdb;
     padding: 3.5rem;
     border-radius: 0.3rem;
-    border-right: 2rem solid $color-primary-dark;
+    border-right: 1.3rem solid $color-primary-dark;
     transition: border-right 0.8s;
 
     @include respond(respond-1400) {
@@ -35,7 +35,7 @@
     }
 
     &:hover {
-        border-right: 2rem solid $color-primary-dark-one;
+        border-right: 1.3rem solid $color-primary-dark-one;
     }
 
     &__title {
@@ -88,5 +88,15 @@
 
     &__register {
         margin-top: 5rem;
+    }
+
+    &__error-password {
+        text-align: center;
+        margin-top: 1rem;
+        font-style: italic;
+        background-color: rgb(231, 47, 47);
+        color: $color-white;
+        border-radius: .3rem;
+        display: none;
     }
 }

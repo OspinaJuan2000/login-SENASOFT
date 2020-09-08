@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <form class="form" action="#" method="POST">
+        <form class="form" id="formLogin" action="#" method="POST">
             <h1 class="form__title">Sign in</h1>
 
             <div class="form__group separator">
@@ -33,13 +33,16 @@
 
             <div class="form__group form__group--submit">
                 <input class="btn btn--green btn--animated btn--large btn--round-3" type="submit" value="Sign in">
+                <input type="hidden" name="login">
             </div>
 
             <div class="form__register">
-                <a class="btn btn--grey btn--large btn--round-3" href="./register.html">Create an account</a>
+                <a class="btn btn--grey btn--large btn--round-3" href="http://localhost/login-SENASOFT/views/User/register.php">Create an account</a>
             </div>
         </form>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./JS/Login/login.js" type="module"></script>
 </body>
 
 </html>
